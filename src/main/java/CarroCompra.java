@@ -1,30 +1,30 @@
 public class CarroCompra {
 
-	private int[][] productos;
+	private int[][] productos = new int[2][5];
 
 	public CarroCompra() {
-		// TODO - implement CarroCompra.CarroCompra
-		throw new UnsupportedOperationException();
+		for (int i = 0; i < 5; i++) {
+			productos[0][i] = 1;
+			productos[1][i] = 1000;
+		}
 	}
 
 	private int calcularTotal() {
-		// TODO - implement CarroCompra.calcularTotal
-		throw new UnsupportedOperationException();
+		int total = 0, subtotal = 0;
+
+		for (int i = 0; i < 5; i++) {
+			total += subTotal(productos[0][i], productos[1][i]);
+		}
+		return total;
 	}
 
-	/**
-	 * 
-	 * @param cantidad
-	 * @param precio
-	 */
 	private int subTotal(int cantidad, int precio) {
-		// TODO - implement CarroCompra.subTotal
-		throw new UnsupportedOperationException();
+		Calculadora calculadora = new Calculadora(cantidad, precio);
+		return calculadora.multiplicar();
 	}
 
 	public void mostrarTotal() {
-		// TODO - implement CarroCompra.mostrarTotal
-		throw new UnsupportedOperationException();
+		System.out.println("El total de la compra es: " + this.calcularTotal());
 	}
 
 }
